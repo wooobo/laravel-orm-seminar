@@ -57,6 +57,20 @@ class ProductTest extends TestCase
         $this->assertNotEmpty($product);
     }
 
+    public function test_product_to_category_save()
+    {
+        $this->prepareLogger();
+
+        $product = Product::first();
+        $category = $product->category;
+        $category->name = '수정';
+        $product->save();
+        $category->save();
+
+        dump($product->toArray());
+        $this->assertNotEmpty($product);
+    }
+
     private function prepareLogger()
     {
         DB::listen(function ($query) {
