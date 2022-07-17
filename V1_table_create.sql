@@ -9,6 +9,18 @@ create table products
         primary key (id)
 );
 
+create table product_options
+(
+    id         int                                not null,
+    product_id int                                not null,
+    name       varchar(255)                       null,
+    created_at datetime default CURRENT_TIMESTAMP not null,
+    updated_at datetime default CURRENT_TIMESTAMP not null,
+    constraint product_options_pk
+        primary key (id)
+);
+
+
 create table categories
 (
     id   int not null,
