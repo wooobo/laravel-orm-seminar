@@ -24,7 +24,7 @@ create table product_options
 create table categories
 (
     id   int not null,
-    name int not null,
+    name varchar(255)       not null,
     created_at datetime default CURRENT_TIMESTAMP not null,
     updated_at datetime default CURRENT_TIMESTAMP not null,
     constraint category_pk
